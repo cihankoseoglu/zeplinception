@@ -174,7 +174,10 @@ nav .nav-wrapper {
   margin: 0 0 0 12px; }
 
 .members-header {
-  position: relative; }
+  position: relative;
+  height: 56px;
+  width: auto;
+  padding: 18px 0 18px 0; }
 
 .members-title {
   width: 77px;
@@ -186,7 +189,7 @@ nav .nav-wrapper {
 
 .member-count {
   position: absolute;
-  top: 0;
+  top: 18px;
   right: 12px;
   background: #fdbd39;
   border-radius: 50%; }

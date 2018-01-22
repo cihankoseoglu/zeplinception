@@ -245,6 +245,10 @@ nav .nav-wrapper{
 
 .members-header{
 	position: relative;
+	height:56px;
+	width:auto;
+	padding: 18px 0 18px 0;
+	
 }
 .members-title {
 	width: 77px;
@@ -257,7 +261,7 @@ nav .nav-wrapper{
 
 .member-count{
 	position: absolute;
-	top:0;
+	top:18px;
 	right:12px;
 	background: $light-orange;
 	border-radius: 50%;
