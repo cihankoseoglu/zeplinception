@@ -41,3 +41,21 @@ nav .nav-wrapper {
   margin: 12px 12px 12px 0px;
   object-fit: contain;
   float: right; }
+
+.tags-header {
+  width: 100%;
+  height: 48px;
+  background: #fff;
+  margin: 12px 0px 12px 6px; }
+
+.chip {
+  height: 24px;
+  line-height: 16px;
+  font-size: 14px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  color: #574751;
+  border-radius: 12px;
+  background-color: rgba(188, 181, 185, 0.3);
+  padding: 4px 12px 4px 12px;
+  margin-left: 12px; }
