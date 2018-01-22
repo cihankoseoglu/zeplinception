@@ -16,11 +16,11 @@ class TagHeader extends React.Component {
     
     render() {
         return(
-            <div className= "navbar-fixed">                   
-                <div className="tags-header">
+                        
+                <div className="tags-header fixed">
                     {this.returnTags()}
                 </div>            
-             </div>
+            
         )
         
     }
@@ -31,3 +31,4 @@ class TagHeader extends React.Component {
 
 
 export default TagHeader;
+

@@ -1,0 +1,17 @@
+
+/* Text styles */
+
+@mixin Normal {
+    font-family: Roboto;
+    font-size: 15px;
+    text-align: left;
+    color: $maroon;
+  }
+  
+  @mixin Description {
+    font-family: Roboto;
+    font-size: 15px;
+    text-align: left;
+    color: $warm-gray;
+  }
+  
