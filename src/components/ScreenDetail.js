@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from 'react-router-dom';
+
 import Header from "./Header";
 import ImageDetail from "./ImageDetail";
 
@@ -18,7 +13,7 @@ class ScreenDetail extends React.Component {
           width: 0,
           height: 0,
           imageUrl: "defaultURL",
-          backgroundColor: [],
+          backgroundColor: {},
       };
 
   }

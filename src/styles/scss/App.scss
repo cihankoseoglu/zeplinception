@@ -1,6 +1,9 @@
 @import '_colors';
 @import '_mixins';
 
+body{
+	overflow: hidden !important;
+}
 .App{
 	margin: 0;
 	padding: 0;
@@ -131,7 +134,7 @@ nav .nav-wrapper{
 	-moz-background-clip: padding;
 	-webkit-background-clip: padding;
 	background-clip: padding-box;
-	opacity: 0;
+	opacity: 0.5;
 
 	-webkit-transition: all 0.8s ease-out;
 	transition: all 0.8s ease-out;
@@ -158,20 +161,24 @@ nav .nav-wrapper{
 // Panes
 
 .SplitPane{
-	overflow-y:visible!important;
+	
+	//overflow-y:visible!important;
 }
 
 .left-pane{
-	overflow: auto;
+	height: 100%;
+	overflow-y: auto !important;
 }
 
 .right-pane{
-	overflow: hidden;
+	height: 100%;
+	overflow-y: auto !important;
 }
 // Grid
 .dashboard-grid{
 	margin: 0px 24px 0 24px;
 	position: relative;
+	margin-bottom: 60px !important; // Looks nicer
 	//overflow: scroll;
 }
 
@@ -231,8 +238,6 @@ nav .nav-wrapper{
 .sidebar-container{
 	background-color: $background-gray;
 	margin: 0;
-
-	
 
 }
 
@@ -310,15 +315,19 @@ nav .nav-wrapper{
 // Members
 .members-container{
 	margin: 0 0 0 12px;
-
+	margin-bottom: 60px !important;
 }
 
 .members-header{
+	background: $background-gray;
 	position: relative;
 	height:56px;
 	width:auto;
 	padding: 18px 0 18px 0;
-	
+	position: sticky;
+	top:0;
+	z-index: 1000;
+
 }
 .members-title {
 	width: 77px;
@@ -416,8 +425,8 @@ nav .nav-wrapper{
 	width:750px;
 	height:1334px;
 	margin: 0 auto;
-	padding-top:37px;
-	padding-bottom:37px;
+	padding-top: 37px;
+	padding-bottom: 37px;
 	
 }
 .hidden{

@@ -5,15 +5,7 @@ import TagHeader from './components/TagHeader';
 import SplitPane from 'react-split-pane';
 import DashboardGrid from './components/DashboardGrid';
 import Sidebar from './components/Sidebar';
-//import ScreenDetail from './components/ScreenDetail';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from 'react-router-dom';
 
-//import { prefixAll } from 'inline-style-prefixer';
 
 
 class App extends Component {
@@ -90,6 +82,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
         <Header projectName={this.state.name} backButton={false} />
         <SplitPane split="vertical" minSize={224} defaultSize={280} maxSize={window.innerWidth/2} primary="second">
           <div className="left-pane">
@@ -101,10 +94,12 @@ class App extends Component {
              <DashboardGrid screens={this.state.screens} active={this.state.activeTag} />
             </div>
           </div>
-          <div className="right-pane">
-            <Sidebar projectName={this.state.name} projectType={this.state.type} projectDensity={this.state.density} members={this.state.members} />
-          </div>
+
+            <div className="right-pane">
+              <Sidebar projectName={this.state.name} projectType={this.state.type} projectDensity={this.state.density} members={this.state.members} />
+            </div>
         </SplitPane>
+
       </div>
     );
   }

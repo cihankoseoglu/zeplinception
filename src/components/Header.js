@@ -1,7 +1,7 @@
 import React from 'react';
 import zeplinIcon from '../assets/logo-zeplin.svg';
 import notificationIcon from '../assets/ic-notification.svg'
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 const Header = (props) => {

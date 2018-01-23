@@ -13,7 +13,8 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.0",
-    "react-split-pane": "^0.1.74"
+    "react-split-pane": "^0.1.74",
+    "react-stickynode": "^1.4.1"
   },
   "scripts": {
     "test": "react-scripts test --env=jsdom",

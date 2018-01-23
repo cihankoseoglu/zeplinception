@@ -1,5 +1,7 @@
 /* Color palette */
-/* Text styles */
+body {
+  overflow: hidden !important; }
+
 .App {
   margin: 0;
   padding: 0; }
@@ -100,7 +102,7 @@ nav .nav-wrapper {
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
   background-clip: padding-box;
-  opacity: 0;
+  opacity: 0.5;
   -webkit-transition: all 0.8s ease-out;
   transition: all 0.8s ease-out; }
 
@@ -118,18 +120,18 @@ nav .nav-wrapper {
 .Resizer.disabled:hover {
   border-color: transparent; }
 
-.SplitPane {
-  overflow-y: visible !important; }
-
 .left-pane {
-  overflow: auto; }
+  height: 100%;
+  overflow-y: auto !important; }
 
 .right-pane {
-  overflow: hidden; }
+  height: 100%;
+  overflow-y: auto !important; }
 
 .dashboard-grid {
   margin: 0px 24px 0 24px;
-  position: relative; }
+  position: relative;
+  margin-bottom: 60px !important; }
 
 .s12 {
   width: 244px !important;
@@ -219,13 +221,18 @@ nav .nav-wrapper {
     color: #574751; }
 
 .members-container {
-  margin: 0 0 0 12px; }
+  margin: 0 0 0 12px;
+  margin-bottom: 60px !important; }
 
 .members-header {
+  background: #f2f2f2;
   position: relative;
   height: 56px;
   width: auto;
-  padding: 18px 0 18px 0; }
+  padding: 18px 0 18px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000; }
 
 .members-title {
   width: 77px;

@@ -10,6 +10,7 @@ class Members extends React.Component {
             owners: [],
             admins: [],
             users: [],
+            headerIsActive: false,
         }
         
     }
@@ -39,6 +40,7 @@ class Members extends React.Component {
         , 1000);
         
     }
+
     
     renderItems(){
         let orderedMembers = this.state.owners.concat(this.state.admins.concat(this.state.users));
@@ -54,9 +56,12 @@ class Members extends React.Component {
     }
     render(){
     return (
+
+
        <div>
+
        <div className="members-container">
-            <div className="members-header">
+            <div className="members-header" id="members-header">
                 <div className="members-title">
                     Members
                 </div>
@@ -65,13 +70,16 @@ class Members extends React.Component {
                     <span className="member-count-span">{this.props.memberInfo.length}</span>
                 </div>
             </div>
-        
+           
        <ul className="collection">
             {this.renderItems()}
         </ul>
        
        </div>
+
         </div>
+
+
     )
 }
 }

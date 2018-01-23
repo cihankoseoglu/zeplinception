@@ -1,7 +1,6 @@
 import React from 'react';
 import Thumbnail from './Thumbnail';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import ScreenDetail from './ScreenDetail';
+
 
 class DashboardGrid extends React.Component {
     constructor(props){
