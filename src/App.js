@@ -73,7 +73,7 @@ class App extends Component {
     //removeThumbnails(tagTitle);
     this.setState({
       activeTag: tagTitle
-    });
+    });  
   }
 
   removeThumbnails(selectedTag){
