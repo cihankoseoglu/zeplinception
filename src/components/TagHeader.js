@@ -1,5 +1,6 @@
 import React from 'react';
-import Tag from './Tag'
+import Tag from './Tag';
+
 
 
 class TagHeader extends React.Component {
@@ -12,6 +13,10 @@ class TagHeader extends React.Component {
         }
     }
 
+    filterThumbnails(tag){
+        this.props.filterThumbnails(tag);
+    }
+
     componentWillReceiveProps(){
         setTimeout(() => {
             this.buildTags()
@@ -21,7 +26,7 @@ class TagHeader extends React.Component {
     buildTags(){
         // I am proud of this one liner
         this.setState({
-            tags: Array.from(new Set(this.props.tags.map(screen => screen.tags).toString().split(","))).filter(v=>v!='')
+            tags: Array.from(new Set(this.props.tags.map(screen => screen.tags).toString().split(","))).filter(v=>v!=='')
         })
 
     }
@@ -31,6 +36,7 @@ class TagHeader extends React.Component {
             <Tag 
                 key= {index.toString().concat("taguniquenessmuch")}
                 tagTitle= {tag} 
+                filterThumbnails={this.filterThumbnails.bind(this)}
             />
         )
     }

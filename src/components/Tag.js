@@ -6,7 +6,7 @@ const Tag = (props) => {
     
     return (
        
-        <div className="chip">
+        <div className="chip" onClick={() => { props.filterThumbnails(`${props.tagTitle}`) }}>
             <span className="tag-text">{props.tagTitle}</span>
         </div>
        

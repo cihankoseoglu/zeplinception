@@ -28,10 +28,35 @@ nav .nav-wrapper{
 .logo-zeplin {
 	width: 36px;
 	height: 30px;
-	margin: 15px 0 15px 12px;
+	margin: 15px 6px 15px 12px;
 	float:left;
 	object-fit: contain;
 	
+}
+
+.backButton {
+	
+	height:18px;
+	width: 124px;
+	font-size: 15px;
+	text-align: left;
+	color: $warm-gray;
+	object-fit: contain;
+	
+	i{
+		object-fit: contain;
+	}
+}
+
+.back-title{
+	position: absolute;
+	width: 124px;
+	height: 18px;
+	font-family: Roboto;
+	font-size: 15px;
+	text-align: left;
+	color: $warm-gray;
+	padding: 0 0 0 6px;
 }
 
 .project-name {
@@ -45,6 +70,7 @@ nav .nav-wrapper{
 	left: 50%;
 	transform: translate(-50%);
 	color: $maroon;	
+
 }
 
 .ic-notification {
@@ -84,6 +110,9 @@ nav .nav-wrapper{
 	padding: 4px 12px 4px 12px;
 	margin-left: 12px;
 	
+	:hover {
+		cursor: pointer;
+	}
 	
 }
 
@@ -161,7 +190,17 @@ nav .nav-wrapper{
 .thumbnail-card { 
 	width: 244px;
 	height: 228px;
+
+	:hover{
+		border: 1px solid $cornflower-blue;
+		cursor: pointer;
+	}
 }
+
+.thumbnail-hidden{
+	display:none;
+}
+
 
 .thumbnail-image {
 	width: 220px;
@@ -368,3 +407,19 @@ nav .nav-wrapper{
 	color: $warm-gray;
 }
 
+.detail-background{
+	background: $whitey;
+	overflow: scroll;
+}
+
+.image-detail{
+	width:750px;
+	height:1334px;
+	margin: 0 auto;
+	padding-top:37px;
+	padding-bottom:37px;
+	
+}
+.hidden{
+	display: none;
+}

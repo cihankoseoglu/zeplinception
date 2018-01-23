@@ -5,6 +5,14 @@ import TagHeader from './components/TagHeader';
 import SplitPane from 'react-split-pane';
 import DashboardGrid from './components/DashboardGrid';
 import Sidebar from './components/Sidebar';
+//import ScreenDetail from './components/ScreenDetail';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
+
 //import { prefixAll } from 'inline-style-prefixer';
 
 
@@ -20,8 +28,11 @@ class App extends Component {
       screens : [],
       tags: [],
       members: [],
+      activeTag: "",
     }
   }
+
+ 
   componentDidMount(){
 
     this.fetchData();
@@ -41,9 +52,6 @@ class App extends Component {
           screens: info.screens,
         }))
       .catch(error => console.log("you cant even parse bruh", error));
-
-
-
 
   }
 
@@ -67,26 +75,40 @@ class App extends Component {
      })
   }
 
+  filterThumbnails(tagTitle){
+    console.log("Im at app level on filterThumbnails");
+    //removeThumbnails(tagTitle);
+    this.setState({
+      activeTag: tagTitle
+    });
+  }
+
+  removeThumbnails(selectedTag){
+
+  }
+
   render() {
     return (
       <div className="App">
-        <Header projectName={this.state.name} />
+        <Header projectName={this.state.name} backButton={false} />
         <SplitPane split="vertical" minSize={224} defaultSize={280} maxSize={window.innerWidth/2} primary="second">
           <div className="left-pane">
-            <TagHeader tags={this.state.screens}/>
+            <TagHeader 
+              tags={this.state.screens}
+              filterThumbnails={this.filterThumbnails.bind(this)}
+            />
             <div>
-             <DashboardGrid screens={this.state.screens}/>
+             <DashboardGrid screens={this.state.screens} active={this.state.activeTag} />
             </div>
           </div>
           <div className="right-pane">
             <Sidebar projectName={this.state.name} projectType={this.state.type} projectDensity={this.state.density} members={this.state.members} />
           </div>
-          
         </SplitPane>
-        
       </div>
     );
   }
 }
+
 
 export default App;

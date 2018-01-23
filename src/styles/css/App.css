@@ -21,9 +21,29 @@ nav .nav-wrapper {
 .logo-zeplin {
   width: 36px;
   height: 30px;
-  margin: 15px 0 15px 12px;
+  margin: 15px 6px 15px 12px;
   float: left;
   object-fit: contain; }
+
+.backButton {
+  height: 18px;
+  width: 124px;
+  font-size: 15px;
+  text-align: left;
+  color: #bcb5b9;
+  object-fit: contain; }
+  .backButton i {
+    object-fit: contain; }
+
+.back-title {
+  position: absolute;
+  width: 124px;
+  height: 18px;
+  font-family: Roboto;
+  font-size: 15px;
+  text-align: left;
+  color: #bcb5b9;
+  padding: 0 0 0 6px; }
 
 .project-name {
   position: absolute;
@@ -65,6 +85,8 @@ nav .nav-wrapper {
   background-color: rgba(188, 181, 185, 0.3);
   padding: 4px 12px 4px 12px;
   margin-left: 12px; }
+  .chip :hover {
+    cursor: pointer; }
 
 .Resizer {
   position: sticky;
@@ -120,6 +142,12 @@ nav .nav-wrapper {
 .thumbnail-card {
   width: 244px;
   height: 228px; }
+  .thumbnail-card :hover {
+    border: 1px solid #419bf9;
+    cursor: pointer; }
+
+.thumbnail-hidden {
+  display: none; }
 
 .thumbnail-image {
   width: 220px;
@@ -265,3 +293,17 @@ nav .nav-wrapper {
   font-size: 15px;
   text-align: left;
   color: #bcb5b9; }
+
+.detail-background {
+  background: #f4f4f4;
+  overflow: scroll; }
+
+.image-detail {
+  width: 750px;
+  height: 1334px;
+  margin: 0 auto;
+  padding-top: 37px;
+  padding-bottom: 37px; }
+
+.hidden {
+  display: none; }
