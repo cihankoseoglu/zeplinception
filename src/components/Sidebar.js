@@ -12,8 +12,8 @@ class Sidebar extends React.Component {
     render() {
         return(
             <div className="sidebar-container">
-                <ProjectInfo />
-                <Members />
+                <ProjectInfo projectName={this.props.projectName} projectType={this.props.projectType} projectDensity={this.props.projectDensity} />
+                <Members memberInfo={this.props.members} />
             </div>                   
             
         )

@@ -9,7 +9,7 @@ const Header = (props) => {
         <div className= "navbar-fixed">                   
                 <nav className="nav-wrapper background">
                     <img src={zeplinIcon} className="logo-zeplin" alt="Zeplin logo" />
-                    <div className="project-name center valign-wrapper">Project Name (Make this callable)</div>                
+                    <div className="project-name center valign-wrapper">{props.projectName}</div>                
                     <img src={notificationIcon} className="ic-notification" alt="Notification Icon" />                        
                 </nav>            
         </div>

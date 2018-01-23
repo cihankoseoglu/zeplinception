@@ -67,6 +67,7 @@ nav .nav-wrapper {
   margin-left: 12px; }
 
 .Resizer {
+  position: sticky;
   width: 12px;
   background-color: #f2f2f2;
   background: url(../../assets/Resizer.svg);
@@ -76,10 +77,18 @@ nav .nav-wrapper {
   box-sizing: border-box;
   -moz-background-clip: padding;
   -webkit-background-clip: padding;
-  background-clip: padding-box; }
+  background-clip: padding-box;
+  opacity: 0;
+  -webkit-transition: all 0.8s ease-out;
+  transition: all 0.8s ease-out; }
 
 .Resizer.vertical {
   cursor: col-resize; }
+
+.Resizer:hover {
+  opacity: 1;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease; }
 
 .Resizer.disabled {
   cursor: not-allowed; }
@@ -87,8 +96,18 @@ nav .nav-wrapper {
 .Resizer.disabled:hover {
   border-color: transparent; }
 
+.SplitPane {
+  overflow-y: visible !important; }
+
+.left-pane {
+  overflow: auto; }
+
+.right-pane {
+  overflow: hidden; }
+
 .dashboard-grid {
-  margin: 0px 24px 0 24px; }
+  margin: 0px 24px 0 24px;
+  position: relative; }
 
 .s12 {
   width: 244px !important;
@@ -119,7 +138,8 @@ nav .nav-wrapper {
   font-family: Roboto, sans-serif;
   font-size: 15px;
   text-align: left;
-  color: #574751; }
+  color: #574751;
+  line-height: 0; }
 
 .sidebar-container {
   background-color: #f2f2f2;
@@ -204,23 +224,36 @@ nav .nav-wrapper {
   text-align: right;
   color: #ffffff; }
 
+.collection {
+  border: 0 !important;
+  box-shadow: 0 !important; }
+
 .collection-item {
-  border: 0;
-  margin: 0;
-  box-shadow: 0; }
+  border: 0 !important;
+  margin: 0 !important;
+  box-shadow: 0 !important; }
+
+.collection-item-gray {
+  background: transparent !important; }
 
 .member-img {
-  margin: 12px;
+  margin: 3px 0 0 0;
   width: 60px;
-  height: 60px; }
+  height: 60px;
+  border-radius: 50%; }
+
+.circle {
+  width: 60px !important;
+  height: 60px !important; }
 
 .member-information {
+  margin: 12px 0 0 12px;
   vertical-align: middle; }
 
 .member-username {
   width: 184px;
   height: 18px;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-size: 15px;
   text-align: left;
   color: #574751; }
@@ -228,7 +261,7 @@ nav .nav-wrapper {
 .member-permission {
   width: 184px;
   height: 18px;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-size: 15px;
   text-align: left;
   color: #bcb5b9; }

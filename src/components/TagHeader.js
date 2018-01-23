@@ -5,12 +5,33 @@ import Tag from './Tag'
 class TagHeader extends React.Component {
     constructor(props){
         super(props);
-        this.returnTags = this.returnTags.bind(this);
+        this.renderTags = this.renderTags.bind(this);
+        this.buildTags = this.buildTags.bind(this);
+        this.state = {
+            tags: []
+        }
     }
 
-    returnTags(){
-        return this.props.tags.map(tag => 
-            <Tag tagTitle= {tag} />
+    componentWillReceiveProps(){
+        setTimeout(() => {
+            this.buildTags()
+        }, 1000);
+    }
+
+    buildTags(){
+        // I am proud of this one liner
+        this.setState({
+            tags: Array.from(new Set(this.props.tags.map(screen => screen.tags).toString().split(","))).filter(v=>v!='')
+        })
+
+    }
+
+    renderTags(){
+        return this.state.tags.map((tag, index) => 
+            <Tag 
+                key= {index.toString().concat("taguniquenessmuch")}
+                tagTitle= {tag} 
+            />
         )
     }
     
@@ -18,7 +39,7 @@ class TagHeader extends React.Component {
         return(
                         
                 <div className="tags-header fixed">
-                    {this.returnTags()}
+                    {this.renderTags()}
                 </div>            
             
         )

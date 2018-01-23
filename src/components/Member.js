@@ -1,14 +1,16 @@
 import React from 'react';
-import logoZep from '../assets/logo-zeplin.svg';
+
 
 const Member = (props) => {
+
+    let isEvenMember = props.id % 2;
     
     return (
-        <li className="collection-item avatar">
-            <img src={logoZep} alt="" className="circle member-img" />
+         <li className={isEvenMember ? "collection-item avatar collection-item-gray" : "collection-item avatar"}>
+            <img src={props.avatar} alt="" className="circle member-img" />
             <div className="member-information">
-                <span className="member-username">username</span>
-                <p className="member-permission">permission</p>            
+                <span className="member-username">{props.username}</span>
+                <p className="member-permission">{props.role}</p>            
             </div>
             
         </li>

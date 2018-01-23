@@ -1,5 +1,5 @@
 import React from 'react';
-import logoZeplin from '../assets/logo-zeplin.svg';
+
 
 
 const Thumbnail = (props) => {
@@ -9,10 +9,10 @@ const Thumbnail = (props) => {
             <div className="col s12 m6">
                 <div className="thumbnail-card">
                     <div className="thumbnail-border">
-                        <img className="thumbnail-image" src={logoZeplin} alt="Thumbnail img"/>
+                        <img className="thumbnail-image" src={`https://zpl-mix.now.sh` + props.thumbnailImage.d2x} alt="Thumbnail img"/>
                     </div>
                     <div className="name">
-                        <p>TitleThumb</p>
+                        <p>{props.name}</p>
                     </div>
                 </div>
             </div>

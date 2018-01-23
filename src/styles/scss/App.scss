@@ -90,6 +90,7 @@ nav .nav-wrapper{
 // Split Pane Resizer
 
 .Resizer {
+	position: sticky;
 	width: 12px;
 	background-color: #f2f2f2;
 	// Hack my way outta here
@@ -101,10 +102,22 @@ nav .nav-wrapper{
 	-moz-background-clip: padding;
 	-webkit-background-clip: padding;
 	background-clip: padding-box;
+	opacity: 0;
+
+	-webkit-transition: all 0.8s ease-out;
+	transition: all 0.8s ease-out;
 }
+
+
 
 .Resizer.vertical {
 	cursor: col-resize;
+}
+
+.Resizer:hover {
+	opacity:1;
+	-webkit-transition: all 0.8s ease;
+	transition: all 0.8s ease;
 }
 .Resizer.disabled {
   cursor: not-allowed;
@@ -113,10 +126,24 @@ nav .nav-wrapper{
   border-color: transparent;
 }
 
-// Grid
+// Panes
 
+.SplitPane{
+	overflow-y:visible!important;
+}
+
+.left-pane{
+	overflow: auto;
+}
+
+.right-pane{
+	overflow: hidden;
+}
+// Grid
 .dashboard-grid{
 	margin: 0px 24px 0 24px;
+	position: relative;
+	//overflow: scroll;
 }
 
 // Thumbnail
@@ -157,6 +184,7 @@ nav .nav-wrapper{
 	font-size: 15px;
 	text-align: left;
 	color: $maroon;
+	line-height: 0;
 }
 
 // Sidebar
@@ -164,6 +192,8 @@ nav .nav-wrapper{
 .sidebar-container{
 	background-color: $background-gray;
 	margin: 0;
+
+	
 
 }
 
@@ -241,6 +271,7 @@ nav .nav-wrapper{
 // Members
 .members-container{
 	margin: 0 0 0 12px;
+
 }
 
 .members-header{
@@ -279,26 +310,40 @@ nav .nav-wrapper{
 	color: #ffffff;
 }
 
-
-
-
 // Member
 
-.collection-item{
-	border: 0; 
-	margin: 0;
-	box-shadow: 0;
+.collection {
+	border: 0 !important;
+	box-shadow: 0 !important;
+}
 
+.collection-item{
+	border: 0 !important; 
+	margin: 0 !important;
+	box-shadow: 0 !important;
+
+}
+
+.collection-item-gray{
+	background: transparent !important;
 }
 
 .member-img{
-	margin: 12px;
+	margin: 3px 0 0 0;
 	width: 60px;
 	height: 60px;
+	border-radius: 50%;
+	
+}
+
+.circle{
+	
+	width: 60px !important;
+	height: 60px !important;
 }
 
 .member-information{
-
+	margin: 12px 0 0 12px;
 	vertical-align: middle;
 
 }
@@ -306,7 +351,7 @@ nav .nav-wrapper{
 .member-username{
 	width: 184px;
 	height: 18px;
-	font-family: Roboto;
+	font-family: Roboto, sans-serif;
 	font-size: 15px;
 	text-align: left;
 	color: $maroon;
@@ -317,7 +362,7 @@ nav .nav-wrapper{
 
 	width: 184px;
 	height: 18px;
-	font-family: Roboto;
+	font-family: Roboto, sans-serif;
 	font-size: 15px;
 	text-align: left;
 	color: $warm-gray;
