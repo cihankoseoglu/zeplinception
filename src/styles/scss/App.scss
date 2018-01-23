@@ -2,12 +2,13 @@
 @import '_mixins';
 
 body{
-	overflow: hidden !important;
+	overflow: hidden;
 }
+
+
 .App{
 	margin: 0;
 	padding: 0;
-	
 }
 
 // Header component
@@ -416,17 +417,24 @@ nav .nav-wrapper{
 	color: $warm-gray;
 }
 
+// ScreenDetail
+
+.screen-detail{
+
+}
+
+// ImageDetail
+
 .detail-background{
 	background: $whitey;
-	overflow: scroll;
+	height: 100%;
+	padding: 37px 0 37px 0;
 }
 
 .image-detail{
 	width:750px;
 	height:1334px;
 	margin: 0 auto;
-	padding-top: 37px;
-	padding-bottom: 37px;
 	
 }
 .hidden{

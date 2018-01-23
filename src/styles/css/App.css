@@ -1,6 +1,6 @@
 /* Color palette */
 body {
-  overflow: hidden !important; }
+  overflow: hidden; }
 
 .App {
   margin: 0;
@@ -303,14 +303,13 @@ nav .nav-wrapper {
 
 .detail-background {
   background: #f4f4f4;
-  overflow: scroll; }
+  height: 100%;
+  padding: 37px 0 37px 0; }
 
 .image-detail {
   width: 750px;
   height: 1334px;
-  margin: 0 auto;
-  padding-top: 37px;
-  padding-bottom: 37px; }
+  margin: 0 auto; }
 
 .hidden {
   display: none; }

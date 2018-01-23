@@ -36,13 +36,21 @@ class ScreenDetail extends React.Component {
 
   
   componentDidMount(){
-      this.fetchScreen()
-    
+      this.fetchScreen();
+
+  }
+
+  componentWillMount(){
+      document.body.style.overflow = "scroll"; 
+  }
+
+  componentWillUnmount(){
+    document.body.style.overflow = "hidden"; 
   }
 
   render() {  
     return (
-      <div>
+      <div className="screen-detail">
         <Header projectName={this.state.name} backButton={true}/>
         <ImageDetail name={this.state.name} width={this.state.width} height={this.state.height} imageurl={this.state.imageUrl}  backgroundColor={this.state.backgroundColor} />
       </div>
