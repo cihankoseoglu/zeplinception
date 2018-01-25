@@ -9,22 +9,22 @@ class ScreenDetail extends React.Component {
       super(props);
 
       this.state ={
-          name: "Default Name",
+          imageName: null,
           width: 0,
           height: 0,
-          imageUrl: "defaultURL",
-          backgroundColor: {},
+          imageUrl: "/imageURL",
+          backgroundColor: null,
       };
 
   }
 
   fetchScreen(){
-    console.log("hello");
+    console.log("hello im fetching screen");
     fetch(`https://zpl-mix.now.sh/projects/13/screens/${this.props.match.params.id}`)
       .then(response => response.json())
       .then(info => this.setState(
         { 
-          name: info.name,
+          imageName: info.name,
           width: info.width,
           height: info.height,
           imageUrl: info.imageUrl,
@@ -36,7 +36,10 @@ class ScreenDetail extends React.Component {
 
   
   componentDidMount(){
+
       this.fetchScreen();
+ 
+      
 
   }
 
@@ -51,8 +54,8 @@ class ScreenDetail extends React.Component {
   render() {  
     return (
       <div className="screen-detail">
-        <Header projectName={this.state.name} backButton={true}/>
-        <ImageDetail name={this.state.name} width={this.state.width} height={this.state.height} imageurl={this.state.imageUrl}  backgroundColor={this.state.backgroundColor} />
+        <Header projectName={this.state.imageName} backButton={true}/>
+        <ImageDetail name={this.state.imageName} width={this.state.width} height={this.state.height} imageurl={this.state.imageUrl}  backgroundColor={this.state.backgroundColor} />
       </div>
     )
   }

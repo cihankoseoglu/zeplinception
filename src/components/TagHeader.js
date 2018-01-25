@@ -20,7 +20,7 @@ class TagHeader extends React.Component {
     componentWillReceiveProps(){
         setTimeout(() => {
             this.buildTags()
-        }, 1000);
+        }, 100);
     }
 
     buildTags(){

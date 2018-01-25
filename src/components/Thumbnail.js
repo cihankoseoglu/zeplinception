@@ -8,7 +8,8 @@ class Thumbnail extends React.Component {
 
         this.state = {
             isHidden: false,
-            active: this.props.active
+            active: null,
+            tags: []
         }
     }
 
@@ -18,9 +19,34 @@ class Thumbnail extends React.Component {
         //this.context.router.transitionTo(`/screen/${this.props.id}`);
     }
 
+    componentDidUpdate(){
+        setTimeout(() => {
+            
+        const activeTag = this.props.active;
+        const tags = this.state.tags;
+
+        if(tags.includes(activeTag)){
+            this.setState({
+                active: activeTag,
+                isHidden: !this.state.isHidden
+            })
+        }
+        }, 100);
+        
+    }
+
+    componentDidMount(){
+        const tags = this.props.tags.values;
+        this.setState({
+            tags
+        })
+
+
+    }
+
     render(){
     return (
-       <li onClick={(e) => this.thumbnailClicked(e)} className={this.state.active === "" ? "thumbnail-hidden" : ""}>
+       <li className= { this.state.isHidden ? "thumbnail-hidden" : ""}>
         <Link to={"/screens/" + this.props.id}>
             <div className="col s12 m6">
                 <div className="thumbnail-card">

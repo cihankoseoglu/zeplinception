@@ -7,14 +7,40 @@ class DashboardGrid extends React.Component {
         super(props);
 
         this.state = {
-            screens: this.props.screens,
-            active: this.props.activeTag
+            screens: null,
+            active: "Ahmet"
         }
     }
 
     componentWillUpdate(){
-        console.log("dashoard update")
+        console.log("dashboard grid update")
+        
     }
+
+    componentWillReceiveProps(){
+        setTimeout(() => {
+            this.setState({
+                active: this.props.activeTag,
+            });
+        }, 100);
+    }
+
+    componentDidMount(){
+        setTimeout(() => {
+            this.setState({
+                screens: this.props.screens,
+                active: "",
+            });
+        }, 100);
+    }
+
+    // shouldComponentUpdate(){
+    //     setTimeout(() => {
+    //         this.setState({
+    //             active: this.props.activeTag,
+    //         });
+    //     }, 100);
+    // }
 
     renderItems(){
 
@@ -25,13 +51,10 @@ class DashboardGrid extends React.Component {
                         id={item._id}
                         name={item.name}
                         tags={item.tags}
-                        active={this.state.active}
+                        active={this.props.active}
                         thumbnailImage={item.thumbnail}
                     />               
             )        
-        
-
-            
         
     }
 

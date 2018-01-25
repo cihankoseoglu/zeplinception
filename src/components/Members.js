@@ -37,7 +37,7 @@ class Members extends React.Component {
             });
             console.log("im here mischieving with names");
         }
-        , 1000);
+        , 100);
         
     }
 

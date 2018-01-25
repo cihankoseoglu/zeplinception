@@ -14,9 +14,9 @@ class App extends Component {
     super(props);
 
     this.state = {
-      name: "Default Name",
-      type: "Default Type",
-      density: "Default Density",
+      name: null,
+      type: "",
+      density: "",
       screens : [],
       tags: [],
       members: [],
@@ -24,37 +24,70 @@ class App extends Component {
     }
   }
 
+  componentWillMount(){
 
+  }
  
   componentDidMount(){
-
+    
+    if(sessionStorage.getItem("name")){
+      this.setState({
+        name: sessionStorage.getItem("name"),
+        type: sessionStorage.getItem("type"),
+        density: sessionStorage.getItem("density"),
+        screens: JSON.parse(sessionStorage.getItem("screens")),
+        tags: [],
+        members: JSON.parse(sessionStorage.getItem("members")),
+        activeTag: "",
+      })
+    }else {
     this.fetchData();
     this.fetchMemberData();
-  }
 
+    }
+
+    
+  }
 
   fetchData(){
 
     fetch(`https://zpl-mix.now.sh/projects/13`)
       .then(response => response.json())
-      .then(info => this.setState(
-        { 
-          name: info.name,
-          type: info.type,
-          density: info.density,
-          screens: info.screens,
-        }))
+      .then(info => 
+        {
+          this.setState(
+          { 
+            name: info.name,
+            type: info.type,
+            density: info.density,
+            screens: info.screens,
+          });
+
+          sessionStorage.setItem('name', info.name);
+          sessionStorage.setItem('type', info.type);
+          sessionStorage.setItem('density', JSON.stringify(info.density));
+          sessionStorage.setItem('screens', JSON.stringify(info.screens));
+      
+      }
+      
+      )
       .catch(error => console.log("you cant even parse bruh", error));
 
   }
 
+  // onSetState = (result, key) => {
+  //   sessionStorage.setItem(key, JSON.stringify(result.))
+  // }
+
   fetchMemberData(){
     fetch(`https://zpl-mix.now.sh/projects/13/users`)
     .then(response => response.json())
-    .then(members => this.setState(
+    .then(members => {this.setState(
       { 
         members: members.users,
-      }))
+      })
+        sessionStorage.setItem("members", JSON.stringify(members.users));
+    })
     .catch(error => console.log("you cant even parse memberz bruh", error));
   }
 
@@ -69,16 +102,13 @@ class App extends Component {
   }
 
   filterThumbnails(tagTitle){
-    console.log("Im at app level on filterThumbnails");
+    console.log(`Im at app level on filterThumbnails and ${tagTitle} was clicked`);
     //removeThumbnails(tagTitle);
     this.setState({
       activeTag: tagTitle
     });  
   }
 
-  removeThumbnails(selectedTag){
-
-  }
 
   render() {
     return (
