@@ -35,7 +35,7 @@ class Members extends React.Component {
                 admins: this.props.memberInfo.filter(member => member.role === "admin").sort(this.compareUsers),
                 users: this.props.memberInfo.filter(member => member.role === "user").sort(this.compareUsers),
             });
-            console.log("im here mischieving with names");
+          //  console.log("im here mischieving with names");
         }
         , 100);
         

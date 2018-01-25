@@ -13,7 +13,7 @@ class DashboardGrid extends React.Component {
     }
 
     componentWillUpdate(){
-        console.log("dashboard grid update")
+       // console.log("dashboard grid update")
         
     }
 

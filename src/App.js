@@ -6,9 +6,12 @@ import SplitPane from 'react-split-pane';
 import DashboardGrid from './components/DashboardGrid';
 import Sidebar from './components/Sidebar';
 
-
+// API endpoint example 13 is called, this const should be changed if other endpoints are to be called.
+const apiNum = 13;
 
 class App extends Component {
+
+  
 
   constructor(props){
     super(props);
@@ -51,7 +54,7 @@ class App extends Component {
 
   fetchData(){
 
-    fetch(`https://zpl-mix.now.sh/projects/13`)
+    fetch(`https://zpl-mix.now.sh/projects/${apiNum}`)
       .then(response => response.json())
       .then(info => 
         {
@@ -80,7 +83,7 @@ class App extends Component {
   // }
 
   fetchMemberData(){
-    fetch(`https://zpl-mix.now.sh/projects/13/users`)
+    fetch(`https://zpl-mix.now.sh/projects/${apiNum}/users`)
     .then(response => response.json())
     .then(members => {this.setState(
       { 
@@ -104,9 +107,17 @@ class App extends Component {
   filterThumbnails(tagTitle){
     console.log(`Im at app level on filterThumbnails and ${tagTitle} was clicked`);
     //removeThumbnails(tagTitle);
-    this.setState({
-      activeTag: tagTitle
-    });  
+
+    if(this.state.activeTag === tagTitle){
+      this.setState({
+        activeTag: null
+      })
+    }else{
+      this.setState({
+        activeTag: tagTitle
+      });  
+    }
+    
   }
 
 

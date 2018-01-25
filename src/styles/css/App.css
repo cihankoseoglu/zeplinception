@@ -90,6 +90,9 @@ nav .nav-wrapper {
   .chip :hover {
     cursor: pointer; }
 
+.chip-selected {
+  background-color: rgba(218, 201, 200, 0.3); }
+
 .Resizer {
   position: sticky;
   width: 12px;

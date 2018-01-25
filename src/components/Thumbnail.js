@@ -19,24 +19,40 @@ class Thumbnail extends React.Component {
         //this.context.router.transitionTo(`/screen/${this.props.id}`);
     }
 
-    componentDidUpdate(){
-        setTimeout(() => {
+    componentWillReceiveProps(){
             
         const activeTag = this.props.active;
-        const tags = this.state.tags;
+        const tags = this.state.tags || [];
 
-        if(tags.includes(activeTag)){
+        if(activeTag){
             this.setState({
-                active: activeTag,
-                isHidden: !this.state.isHidden
+                isHidden: true,
+                active: activeTag
             })
         }
-        }, 100);
+
+        if(activeTag === null){
+            this.setState({
+                isHidden: false,
+                active: activeTag
+            })
+        }
+        
+        for (let tag of tags){
+            
+            if(activeTag === tag){
+                this.setState({
+                    isHidden: false,
+                    active: activeTag
+                })
+            }
+        }
+        
         
     }
 
     componentDidMount(){
-        const tags = this.props.tags.values;
+        const tags = this.props.tags;
         this.setState({
             tags
         })

@@ -1,7 +1,9 @@
 import React from 'react';
-
 import Header from "./Header";
 import ImageDetail from "./ImageDetail";
+
+// API endpoint example 13 is called, this const should be changed if other endpoints are to be called.
+const apiNum = 13;
 
 class ScreenDetail extends React.Component {
 
@@ -20,7 +22,7 @@ class ScreenDetail extends React.Component {
 
   fetchScreen(){
     console.log("hello im fetching screen");
-    fetch(`https://zpl-mix.now.sh/projects/13/screens/${this.props.match.params.id}`)
+    fetch(`https://zpl-mix.now.sh/projects/${apiNum}/screens/${this.props.match.params.id}`)
       .then(response => response.json())
       .then(info => this.setState(
         { 
