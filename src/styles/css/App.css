@@ -1,4 +1,17 @@
 /* Color palette */
+/* Text styles */
+.normal, .project-name, .chip, .name, .project-title .project-title-span, .project-details span.value, .members-title, .member-username {
+  font-family: Roboto;
+  font-size: 15px;
+  text-align: left;
+  color: #574751; }
+
+.description, .back-title, .project-details span.title, .member-permission {
+  font-family: Roboto;
+  font-size: 15px;
+  text-align: left;
+  color: #bcb5b9; }
+
 body {
   overflow: hidden; }
 
@@ -13,7 +26,8 @@ nav {
 
 nav .nav-wrapper {
   position: relative;
-  height: 100%; }
+  height: 100%;
+  z-index: 50; }
 
 .background {
   width: 100%;
@@ -41,23 +55,15 @@ nav .nav-wrapper {
   position: absolute;
   width: 124px;
   height: 18px;
-  font-family: Roboto;
-  font-size: 15px;
-  text-align: left;
-  color: #bcb5b9;
   padding: 0 0 0 6px; }
 
 .project-name {
   position: absolute;
   width: auto;
   height: 18px;
-  font-family: Roboto;
-  font-size: 15px;
-  text-align: center;
   top: 21px;
   left: 50%;
-  transform: translate(-50%);
-  color: #574751; }
+  transform: translate(-50%); }
 
 .ic-notification {
   width: 36px;
@@ -70,28 +76,24 @@ nav .nav-wrapper {
   width: 100%;
   height: 48px;
   background: #fff;
-  margin: 12px 0px 12px 0px;
-  padding-left: 6px; }
-
-.fixed {
-  position: sticky; }
+  margin: 0px 0px 12px 0px;
+  padding: 12px 0px 0px 0px;
+  padding-left: 6px;
+  position: sticky;
+  top: 0;
+  z-index: 100; }
 
 .chip {
   height: 24px;
   line-height: 16px;
   font-size: 14px;
-  font-family: Roboto, sans-serif;
   font-weight: 400;
-  color: #574751;
   border-radius: 12px;
   background-color: rgba(188, 181, 185, 0.3);
   padding: 4px 12px 4px 12px;
   margin-left: 12px; }
   .chip :hover {
     cursor: pointer; }
-
-.chip-selected {
-  background-color: rgba(218, 201, 200, 0.3); }
 
 .Resizer {
   position: sticky;
@@ -144,10 +146,10 @@ nav .nav-wrapper {
   width: 244px !important;
   height: 228px !important; }
 
-.thumbnail-card {
+.thumbnail-border {
   width: 244px;
   height: 228px; }
-  .thumbnail-card :hover {
+  .thumbnail-border :hover {
     border: 1px solid #419bf9;
     cursor: pointer; }
 
@@ -168,10 +170,6 @@ nav .nav-wrapper {
 .name {
   width: 220px;
   height: 18px;
-  font-family: Roboto, sans-serif;
-  font-size: 15px;
-  text-align: left;
-  color: #574751;
   line-height: 0; }
 
 .sidebar-container {
@@ -192,10 +190,7 @@ nav .nav-wrapper {
     vertical-align: middle;
     width: 100%;
     height: 21px;
-    font-family: Roboto, sans-serif;
-    font-size: 18px;
-    text-align: left;
-    color: #574751; }
+    font-size: 18px; }
 
 .project-details {
   margin: 0 0 0 12px;
@@ -209,19 +204,11 @@ nav .nav-wrapper {
   .project-details span.title {
     display: table-cell;
     width: 84px;
-    height: 18px;
-    font-family: Roboto;
-    font-size: 15px;
-    text-align: left;
-    color: #bcb5b9; }
+    height: 18px; }
   .project-details span.value {
     display: table-cell;
     width: 160px;
-    height: 18px;
-    font-family: Roboto;
-    font-size: 15px;
-    text-align: left;
-    color: #574751; }
+    height: 18px; }
 
 .members-container {
   margin: 0 0 0 12px;
@@ -229,7 +216,6 @@ nav .nav-wrapper {
 
 .members-header {
   background: #f2f2f2;
-  position: relative;
   height: 56px;
   width: auto;
   padding: 18px 0 18px 0;
@@ -240,10 +226,7 @@ nav .nav-wrapper {
 .members-title {
   width: 77px;
   height: 21px;
-  font-family: Roboto;
-  font-size: 18px;
-  text-align: left;
-  color: #574751; }
+  font-size: 18px; }
 
 .member-count {
   position: absolute;
@@ -290,19 +273,11 @@ nav .nav-wrapper {
 
 .member-username {
   width: 184px;
-  height: 18px;
-  font-family: Roboto, sans-serif;
-  font-size: 15px;
-  text-align: left;
-  color: #574751; }
+  height: 18px; }
 
 .member-permission {
   width: 184px;
-  height: 18px;
-  font-family: Roboto, sans-serif;
-  font-size: 15px;
-  text-align: left;
-  color: #bcb5b9; }
+  height: 18px; }
 
 .detail-background {
   background: #f4f4f4;

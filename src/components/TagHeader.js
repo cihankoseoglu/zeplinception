@@ -44,7 +44,7 @@ class TagHeader extends React.Component {
     render() {
         return(
                         
-                <div className="tags-header fixed">
+                <div className="tags-header">
                     {this.renderTags()}
                 </div>            
             

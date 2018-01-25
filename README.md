@@ -5,6 +5,12 @@ To run the project, simply,
 ### `npm install`
 ### `npm start`
 
+or you can do a production build by,
+
+### `npm run build`
+### `npm install -g serve` 
+### `serve -s build/`
+
 
 ## My spiritual journey
 
@@ -21,26 +27,33 @@ On days 5-6, I did most of the project, I spent 55 pomodoros = 27.5 hours with b
 
 On day 7, I was pretty much done, but I worked on some UI bugs and the React routing, 16 pomodoros = 8 hours. 
 
+Additional : I spent about 2 hours to implement the tag filter system and refactoring.
+
 ## Things that went well
 
 Designing the UI except for the header was a breeze. 
+
 React 3rd party world is great! SplitPane was a good component for my design. 
+
 Rendering objects without using Promises that much
+
 Sorting members correctly
+
 Right pane in general was fun to implement
 
 ## Things that took some time
 
 Designing the Header (I really spent so much time on that Header I wanna cry hence the emphasis)
-Tag filter system. I couldn't get it working, maybe I needed another day, I'll get it working after submission. 
+
+Tag filter system. *it works now*
+
 Getting SCSS to work with React without 'ejecting'. I seriously don't understand how SCSS is not working out of the box with webpack. I was this close to switching to Gulp.
+
 React-router v.4.2.0 has breaking changes so most of the online stuff is obsolete, but it's working properly.
+
 Split pane resizer. I literally hacked this by designing an SVG resizer on Sketch, that's same with Zeplin designs (I looked everywhere but that resizer on Zeplin couldn't be exported as SVG) and used that as a background for the resizer because that React component was not supporting custom resizers (I will do a PR to that repo for humanity's sake). But it's working.
 
 
-## Assumptions
-
-While I could have asked, I forgot to ask. The Tag filters on the grid are position:sticky because the notes said it should be sticky, however I feel like it should have been position:fixed, nevertheless I went ahead with sticky. 
 
 
 

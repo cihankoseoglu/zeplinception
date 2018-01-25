@@ -1,6 +1,7 @@
 @import '_colors';
 @import '_mixins';
 
+
 body{
 	overflow: hidden;
 }
@@ -21,6 +22,7 @@ nav{
 nav .nav-wrapper{
 	position: relative;
 	height: 100%;
+	z-index: 50;
 }
 
 .background {
@@ -53,13 +55,10 @@ nav .nav-wrapper{
 }
 
 .back-title{
+	@extend .description;
 	position: absolute;
 	width: 124px;
 	height: 18px;
-	font-family: Roboto;
-	font-size: 15px;
-	text-align: left;
-	color: $warm-gray;
 	padding: 0 0 0 6px;
 }
 
@@ -67,13 +66,11 @@ nav .nav-wrapper{
 	position: absolute;
 	width: auto;
 	height: 18px;
-	font-family: Roboto;
-	font-size: 15px;
-	text-align: center;
+	@extend .normal;
 	top: 21px;
 	left: 50%;
 	transform: translate(-50%);
-	color: $maroon;	
+	
 
 }
 
@@ -91,24 +88,24 @@ nav .nav-wrapper{
 	width: 100%;
 	height: 48px;
 	background: #fff;
-	margin: 12px 0px 12px 0px;
+	margin: 0px 0px 12px 0px;
+	padding: 12px 0px 0px 0px;
 	padding-left: 6px;
-
-	
-}
-.fixed {
 	position: sticky;
+	top:0;
+	z-index: 100;
+
 }
+	
 // Tag Component
 
 
 .chip{
+	@extend .normal;
 	height:24px;
 	line-height: 16px;
 	font-size:14px;
-	font-family: Roboto, sans-serif;
 	font-weight: 400;
-	color: $maroon;
 	border-radius: 12px;
 	background-color: rgba(188, 181, 185, 0.3);
 	padding: 4px 12px 4px 12px;
@@ -120,10 +117,10 @@ nav .nav-wrapper{
 	
 }
 
-.chip-selected{
-	background-color: rgba(218, 201, 200, 0.3);
+// .chip-selected{
+// 	background-color: rgba(218, 201, 200, 0.3);
 
-}
+// }
 
 // Split Pane Resizer
 
@@ -200,7 +197,7 @@ nav .nav-wrapper{
 	height: 228px!important;
 }
 
-.thumbnail-card { 
+.thumbnail-border { 
 	width: 244px;
 	height: 228px;
 
@@ -232,10 +229,7 @@ nav .nav-wrapper{
 .name {
 	width: 220px;
 	height: 18px;
-	font-family: Roboto, sans-serif;
-	font-size: 15px;
-	text-align: left;
-	color: $maroon;
+	@extend .normal;
 	line-height: 0;
 }
 
@@ -266,10 +260,9 @@ nav .nav-wrapper{
 		vertical-align: middle;
 		width: 100%;
 		height: 21px;
-		font-family: Roboto, sans-serif;
+		@extend .normal;
 		font-size: 18px;
-		text-align: left;
-		color: $maroon;
+
 	}
 	
 	
@@ -296,10 +289,7 @@ nav .nav-wrapper{
 		display: table-cell;
 		width: 84px;
 		height: 18px;
-		font-family: Roboto;
-		font-size: 15px;
-		text-align: left;
-		color: $warm-gray;
+		@extend .description;
 
 
 	}
@@ -308,10 +298,7 @@ nav .nav-wrapper{
 		display: table-cell;
 		width: 160px;
 		height: 18px;
-		font-family: Roboto;
-		font-size: 15px;
-		text-align: left;
-		color: $maroon;
+		@extend .normal;
 	}
 
 }
@@ -326,11 +313,10 @@ nav .nav-wrapper{
 
 .members-header{
 	background: $background-gray;
-	position: relative;
 	height:56px;
 	width:auto;
 	padding: 18px 0 18px 0;
-	position: sticky;
+	position:sticky;
 	top:0;
 	z-index: 1000;
 
@@ -338,10 +324,9 @@ nav .nav-wrapper{
 .members-title {
 	width: 77px;
 	height: 21px;
-	font-family: Roboto;
+	@extend .normal;
 	font-size: 18px;
-	text-align: left;
-	color: $maroon;
+	
 }
 
 .member-count{
@@ -405,10 +390,7 @@ nav .nav-wrapper{
 .member-username{
 	width: 184px;
 	height: 18px;
-	font-family: Roboto, sans-serif;
-	font-size: 15px;
-	text-align: left;
-	color: $maroon;
+	@extend .normal;
 
 }
 
@@ -416,10 +398,7 @@ nav .nav-wrapper{
 
 	width: 184px;
 	height: 18px;
-	font-family: Roboto, sans-serif;
-	font-size: 15px;
-	text-align: left;
-	color: $warm-gray;
+	@extend .description;
 }
 
 // ScreenDetail
